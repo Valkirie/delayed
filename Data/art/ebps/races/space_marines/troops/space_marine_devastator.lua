@@ -3,8 +3,8 @@ simvis_attributes =
 	selection_volume		= 1,
 	selection_ground		= 1,
 
-        vis_scale_min = 1.00,
-	vis_scale_max = 1.00,
+    vis_scale_min = 1.1,
+	vis_scale_max = 1.1,
 
 	-- Shadow Types:
 	-- 0 = None
@@ -19,6 +19,5 @@ simvis_attributes =
 	infantry_sway_update_time		= 4,
 	infantry_sway_random_radius	= 0.4,
 	
-	distance_game_mesh_lod = 40,	
-	occludee	= 1,	
+	occludee	= 1,
 }
