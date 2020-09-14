@@ -191,9 +191,15 @@ function MarineBuildBaseStrategy:GetUnitStats(sSquadName)
 		return 1, 0
 	elseif (sSquadName == "space_marine_squad_tactical") then
 		return 2, 0
+	elseif (sSquadName == "space_marine_squad_devastator") then
+		return 2, 0
+	elseif (sSquadName == "space_marine_squad_death_watch") then
+		return 3, 0
 	elseif (sSquadName == "space_marine_squad_assault") then
 		return 3, 0
 	elseif (sSquadName == "space_marine_squad_grey_knights") then
+		return 3, 0
+	elseif (sSquadName == "space_marine_squad_grey_knights_justicar") then
 		return 3, 0
 	elseif (sSquadName == "space_marine_squad_terminator") then
 		return 3, 0
@@ -207,12 +213,16 @@ function MarineBuildBaseStrategy:GetUnitStats(sSquadName)
 		return 0, 3
 	elseif (sSquadName == "space_marine_squad_dreadnought_hellfire") then
 		return 0, 3
+	elseif (sSquadName == "space_marine_squad_dreadnought_venerable") then
+		return 0, 3
 	elseif (sSquadName == "space_marine_squad_whirlwind") then
 		return 0, 4
 	elseif (sSquadName == "space_marine_squad_predator") then
 		return 0, 5
 	elseif (sSquadName == "space_marine_squad_land_raider") then
-		return 0, 3
+		return 0, 4
+	elseif (sSquadName == "space_marine_squad_land_raider_prometheus") then
+		return 0, 4
 	end
 	return 0, 0
 end
@@ -259,7 +269,7 @@ function MarineBuildBaseStrategy:BuildFlexible()
 	local iArmyStrength = cpu_manager:GetArmyStrength()
 	local iLibrarianSquads	= self:CountSquads("space_marine_squad_librarian")
 	local iCommanderSquads	= self:CountSquads("space_marine_squad_force_commander") + self:CountSquads("space_marine_squad_chaplain") + iLibrarianSquads
-	local iInfantrySquads	= self:CountSquads("space_marine_squad_scout") + self:CountSquads("space_marine_squad_tactical") + self:CountSquads("space_marine_squad_assault")
+	local iInfantrySquads	= self:CountSquads("space_marine_squad_scout") + self:CountSquads("space_marine_squad_tactical") + self:CountSquads("space_marine_squad_devastator") + self:CountSquads("space_marine_squad_death_watch") + self:CountSquads("space_marine_squad_assault")
 	
 	-- Compute tier 1 researches
 	if (self.tierLevel >= 1) then
@@ -463,7 +473,10 @@ function MarineBuildBaseStrategy:ModifySquadDemand(iUnitID)
 		end
 		local num_attach = self:CountSquads("space_marine_squad_scout", apoth_attach) +
 				   self:CountSquads("space_marine_squad_tactical", apoth_attach) +
+				   self:CountSquads("space_marine_squad_devastator", apoth_attach) +
+				   self:CountSquads("space_marine_squad_death_watch", apoth_attach) +
 				   self:CountSquads("space_marine_squad_grey_knights", apoth_attach) +
+				   self:CountSquads("space_marine_squad_grey_knights_justicar", apoth_attach) +
 				   self:CountSquads("space_marine_squad_terminator_assault", apoth_attach) + 
 				   self:CountSquads("space_marine_squad_terminator", apoth_attach) 
  
@@ -495,7 +508,7 @@ function MarineBuildBaseStrategy:ModifySquadDemand(iUnitID)
 	end
 	
 	-- Only build rhinos if we've full support cap
-	if (iUnitID == cpu_manager.stats:GetSquadID("space_marine_squad_rhino")) then
+	if (iUnitID == cpu_manager.stats:GetSquadID("space_marine_squad_rhino") or iUnitID == cpu_manager.stats:GetSquadID("space_marine_squad_razorback")) then
 		
 		-- Check army strength
 		if (cpu_manager:GetArmyStrength() < 4000) then
@@ -510,7 +523,7 @@ end
 function MarineBuildBaseStrategy:RelicRequired(sName)
 
 	-- Check name
-	if (sName == "space_marine_squad_land_raider") then
+	if (sName == "space_marine_squad_land_raider" or sName == "space_marine_squad_land_raider_prometheus") then
 		return true
 	end
 	return false

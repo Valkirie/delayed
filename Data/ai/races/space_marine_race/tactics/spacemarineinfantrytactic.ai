@@ -21,7 +21,10 @@ function SpaceMarineInfantryTactic:__init( squad_ai ) super( squad_ai )
 		self.m_iTransportable = 1
 		
 	elseif (sSquadName == "space_marine_squad_tactical" or
-			sSquadName == "space_marine_squad_grey_knights") then
+			sSquadName == "space_marine_squad_devastator" or
+			sSquadName == "space_marine_squad_death_watch" or
+			sSquadName == "space_marine_squad_grey_knights" or
+			sSquadName == "space_marine_squad_grey_knights_justicar") then
 		
 		-- Squads are transportable and able to deepstrike	
 		self.m_iTransportable = 1

@@ -7,12 +7,17 @@ class 'SpaceMarineVehicleTactic' (VehicleTactic)
 function SpaceMarineVehicleTactic:__init( squad_ai ) super( squad_ai )
 
 	self:SetName("Space Marine Vehicle Tactic")
-	
-	-- Dreadnoughts and Hellfire Dreadnoughts can enter deepstrike buildings
+
+	-- All Dreadnoughts can enter deepstrike buildings
 	local sName = squad_ai:GetSquadName()
 	if (sName == "space_marine_squad_dreadnought" or
-		sName == "space_marine_squad_dreadnought_hellfire") then
-		self.m_iDeepStrikeBlueprintID = cpu_manager.stats:GetBuildingID("space_marine_orbital_relay")
+		sName == "space_marine_squad_dreadnought_hellfire" or
+		sName == "space_marine_squad_dreadnought_venerable") then
+		self.m_iDeepStrikeBlueprintID = cpu_manager.stats:GetBuildingID( "space_marine_orbital_relay" )
+
+	elseif (sName == "space_marine_squad_predator") then
+	
+		self.m_iDeepStrikeBlueprintID = cpu_manager.stats:GetBuildingID("space_marine_vehicle_building")
 	end
 end
 
@@ -24,7 +29,9 @@ function SpaceMarineVehicleTactic:CheckVehicleDance(sName)
 		sName == "space_marine_squad_predator" or
 		sName == "space_marine_squad_dreadnought_hellfire" or
 		sName == "space_marine_squad_land_raider" or
-		sName == "space_marine_squad_rhino") then
+		sName == "space_marine_squad_land_raider_prometheus" or
+		sName == "space_marine_squad_rhino" or
+		sName == "space_marine_squad_razorback") then
 		return true
 	end
 	return false
@@ -53,4 +60,15 @@ function SpaceMarineVehicleTactic:DoAbilities()
 
 	-- Call standard method
 	VehicleTactic.DoAbilities(self)
+end
+
+function SpaceMarineVehicleTactic:Upgrade()
+
+	-- If there are no ressources available, don't upgrade!
+	if (not Tactic.Options.can_reinforce) then
+		return
+	end
+  
+	local class_type = cpu_manager:FindClosestEnemyPlayer():GetMajorityClassType()
+	self.squad_ai:DoBestUpgrade( class_type )
 end

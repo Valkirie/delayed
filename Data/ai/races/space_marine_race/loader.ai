@@ -85,9 +85,15 @@ function space_marine_race:CreateTactic(oSquadAI)
 		return SkullProbeTactic(oSquadAI)
 	elseif (sUnitName == "space_marine_squad_land_raider") then
 		return LandRaiderTactic(oSquadAI)
+	elseif (sUnitName == "space_marine_squad_land_raider_prometheus") then
+		return LandRaiderTactic(oSquadAI)
 	elseif (sUnitName == "space_marine_squad_rhino") then
 		return RhinoTactic(oSquadAI)
+	elseif (sUnitName == "space_marine_squad_razorback") then
+		return RhinoTactic(oSquadAI)
 	elseif (sUnitName == "space_marine_squad_dreadnought") then
+		return DreadnoughtTactic(oSquadAI)
+	elseif (sUnitName == "space_marine_squad_dreadnought_venerable") then
 		return DreadnoughtTactic(oSquadAI)
 	elseif (bVehicle or bAirPlane) then
 		return SpaceMarineVehicleTactic(oSquadAI)
