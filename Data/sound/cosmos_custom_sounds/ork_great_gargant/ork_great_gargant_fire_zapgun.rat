@@ -1,0 +1,8 @@
+-- This file is generated automatically by the Relic Audio Tool
+
+version = 9
+
+priority = 1
+volume = 0.53
+maxPolyphony = 5
+weight = 1
