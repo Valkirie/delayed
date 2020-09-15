@@ -611,7 +611,7 @@ SpaceMarineUnitStats =
 		potential =
 		{
 			{
-				name = "space_marine_plasma_cannon_devastator",
+				name = "space_marine_plasma_cannon_dreadnought_venerable",
 				effectiveness = GenerateUnitEffectiveness(math.random(6*10,8*10)/10,math.random(6*10,8*10)/10,math.random(6*10,8*10)/10,math.random(6*10,8*10)/10,math.random(6*10,8*10)/10,math.random(6*10,8*10)/10,math.random(6*10,8*10)/10,math.random(6*10,8*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
 			},
