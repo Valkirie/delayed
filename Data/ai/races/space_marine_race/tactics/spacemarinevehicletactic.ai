@@ -61,14 +61,3 @@ function SpaceMarineVehicleTactic:DoAbilities()
 	-- Call standard method
 	VehicleTactic.DoAbilities(self)
 end
-
-function SpaceMarineVehicleTactic:Upgrade()
-
-	-- If there are no ressources available, don't upgrade!
-	if (not Tactic.Options.can_reinforce) then
-		return
-	end
-  
-	local class_type = cpu_manager:FindClosestEnemyPlayer():GetMajorityClassType()
-	self.squad_ai:DoBestUpgrade( class_type )
-end
