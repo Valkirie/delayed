@@ -1,0 +1,20 @@
+----------------------------------------
+-- File: 'guardrelaytactic.ai'
+-- Edited by Arkhan		@ 15.01.2007
+
+class 'GuardRelayTactic' (BaseTactic)
+
+function GuardRelayTactic:__init( base_ai ) super( base_ai )
+
+	self:SetName("Guard Relay Tactic")
+	
+	-- Building is a bunker
+	self:AddToBunkerList()
+
+	-- Building can deepstrike troops
+	self.m_bCanDeepStrikeTroops = true
+end
+
+function GuardRelayTactic:CanDeepStrikeTroops()
+	return (cpu_manager.cpu_player:IsResearchComplete("guard_full_scale_war"))
+end

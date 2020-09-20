@@ -36,7 +36,8 @@ BuildBaseStrategyInfo =
 			{
 				{ 1, 700, 150, 0, 1,	 "Building",    "guard_hq" },
 				{ 1, 125, 0, 0, 1,	 "Building",    "guard_infantry" },
-				{ 1, 120, 15, 0, 1,	 "Unit",	"guard_squad_command_squad" },
+				{ 1, 120, 15, 0, 1,	 "Unit",	"guard_squad_command_squad_dad" },
+				{ 1, 120, 25, 0, 1,	 "Unit",	"guard_squad_command_squad" },
 				{ 1, 160, 0, 0, 3,	 "Unit",	"guard_squad_guardsmen" },
 				{ 1, 165, 0, 0, 1,	 "Building",    "guard_plasma_generator" },
 				{ 1, 175, 50, 500, 1,	 "Building",    "guard_tactica" },
@@ -66,9 +67,10 @@ BuildBaseStrategyInfo =
 				{ 2, 340, 340, 1500, 1,	 "Addon",	"addon_guard_hq_2" },
 				{ 2, 250, 100, 2000, 40, "TurretAddon", "addon_guard_list_post_2" },
 				{ 2, 90, 30, 2000, 2,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 2, 250, 150, 2000, 1,	 "Building",    "guard_earthshaker" },
 				{ 2, 50, 50, 2000, 2,	 "Building",	"guard_mines" },
 
-				{ 3, 0, 0, 0, 1,	 "Restrict",	"guard_squad_command_squad" },
+				{ 3, 0, 0, 0, 1,	 "Restrict",	"guard_squad_command_squad_dad" },
 				{ 3, 50, 15, 0, 100,	 "Addon",	"addon_guard_ogryn_quarters" },
 				{ 3, 50, 15, 0, 100,	 "Addon",	"addon_guard_kasrkin_quarters" },
 				{ 3, 180, 60, 0, 1,	 "Unit",	"guard_squad_ogryns" },
@@ -78,6 +80,7 @@ BuildBaseStrategyInfo =
 				{ 3, 50, 100, 2000, 1,	 "Addon",	"addon_guard_marauder_depot" },
 				{ 3, 50, 25, 2000, 1,	 "Addon",	"addon_guard_vindicare_temple" },
 				{ 3, 90, 30, 2000, 4,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 3, 250, 150, 2000, 2,	 "Building",    "guard_earthshaker" },
 				{ 3, 50, 50, 2000, 4,	 "Building",	"guard_mines" },
 				{ 3, 450, 450, 2000, 1,	 "Research",    "guard_full_scale_war" },
 
@@ -85,6 +88,7 @@ BuildBaseStrategyInfo =
 				{ 4, 200, 50, 2000, 1,	 "Building",    "guard_mars_pattern" },
 				{ 4, 400, 400, 0, 1,	 "Unit",	"guard_squad_baneblade" },
 				{ 4, 90, 30, 2000, 6,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 4, 250, 150, 2000, 3,	 "Building",    "guard_earthshaker" },
 				{ 4, 50, 50, 2000, 6,	 "Building",	"guard_mines" },
 				{ 4, 250, 100, 3000, 100,"TurretAddon", "addon_guard_list_post_2" },
 				{ 4, 700, 150, 4000, 2,  "Building",    "guard_hq" }
@@ -93,7 +97,8 @@ BuildBaseStrategyInfo =
 			-- Mass guard strategy
 			{
 				{ 1, 0, 0, 0, 0,	 "Rush", 	"Prepare" },
-				{ 1, 120, 15, 0, 1,	 "Unit",	"guard_squad_command_squad" },
+				{ 1, 120, 15, 0, 1,	 "Unit",	"guard_squad_command_squad_dad" },
+				{ 1, 120, 25, 0, 1,	 "Unit",	"guard_squad_command_squad" },
 				{ 1, 160, 0, 0, 3,	 "Unit",	"guard_squad_guardsmen" },
 				{ 1, 700, 150, 0, 1,	 "Building",    "guard_hq" },
 				{ 1, 125, 0, 0, 1,	 "Building",    "guard_infantry" },
@@ -126,9 +131,10 @@ BuildBaseStrategyInfo =
 				{ 2, 340, 340, 1500, 1,	 "Addon",	"addon_guard_hq_2" },
 				{ 2, 250, 100, 2000, 40, "TurretAddon", "addon_guard_list_post_2" },
 				{ 2, 90, 30, 2000, 2,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 2, 250, 150, 2000, 1,	 "Building",    "guard_earthshaker" },
 				{ 2, 50, 50, 2000, 2,	 "Building",	"guard_mines" },
 
-				{ 3, 0, 0, 0, 1,	 "Restrict",	"guard_squad_command_squad" },
+				{ 3, 0, 0, 0, 1,	 "Restrict",	"guard_squad_command_squad_dad" },
 				{ 3, 50, 15, 0, 100,	 "Addon",	"addon_guard_ogryn_quarters" },
 				{ 3, 50, 15, 0, 100,	 "Addon",	"addon_guard_kasrkin_quarters" },
 				{ 3, 180, 60, 0, 1,	 "Unit",	"guard_squad_ogryns" },
@@ -138,6 +144,7 @@ BuildBaseStrategyInfo =
 				{ 3, 50, 100, 2000, 1,	 "Addon",	"addon_guard_marauder_depot" },
 				{ 3, 50, 25, 2000, 1,	 "Addon",	"addon_guard_vindicare_temple" },
 				{ 3, 90, 30, 2000, 4,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 3, 250, 150, 2000, 2,	 "Building",    "guard_earthshaker" },
 				{ 3, 50, 50, 2000, 4,	 "Building",	"guard_mines" },
 				{ 3, 450, 450, 2000, 1,	 "Research",    "guard_full_scale_war" },
 
@@ -145,6 +152,7 @@ BuildBaseStrategyInfo =
 				{ 4, 200, 50, 2000, 1,	 "Building",    "guard_mars_pattern" },
 				{ 4, 400, 400, 0, 1,	 "Unit",	"guard_squad_baneblade" },
 				{ 4, 90, 30, 2000, 6,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 4, 250, 150, 2000, 3,	 "Building",    "guard_earthshaker" },
 				{ 4, 50, 50, 2000, 6,	 "Building",	"guard_mines" },
 				{ 4, 250, 100, 3000, 100,"TurretAddon", "addon_guard_list_post_2" },
 				{ 4, 700, 150, 4000, 2,	 "Building",    "guard_hq" }
@@ -153,7 +161,8 @@ BuildBaseStrategyInfo =
 			-- Command squad / Commissar strategy
 			{
 				{ 1, 0, 0, 0, 0,	 "Rush", 	"Prepare" },
-				{ 1, 120, 15, 0, 1,	 "Unit",	"guard_squad_command_squad" },
+				{ 1, 120, 15, 0, 1,	 "Unit",	"guard_squad_command_squad_dad" },
+				{ 1, 120, 25, 0, 1,	 "Unit",	"guard_squad_command_squad" },
 				{ 1, 80, 40, 0, 3,	 "Unit",	"guard_squad_commissar" },
 				{ 1, 160, 0, 0, 3,	 "Unit",	"guard_squad_guardsmen" },
 				{ 1, 700, 150, 0, 1,	 "Building",    "guard_hq" },
@@ -185,9 +194,10 @@ BuildBaseStrategyInfo =
 				{ 2, 340, 340, 1500, 1,	 "Addon",	"addon_guard_hq_2" },
 				{ 2, 250, 100, 2000, 40, "TurretAddon", "addon_guard_list_post_2" },
 				{ 2, 90, 30, 2000, 2,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 2, 250, 150, 2000, 1,	 "Building",    "guard_earthshaker" },
 				{ 2, 50, 50, 2000, 2,	 "Building",	"guard_mines" },
 
-				{ 3, 0, 0, 0, 1,	 "Restrict",	"guard_squad_command_squad" },
+				{ 3, 0, 0, 0, 1,	 "Restrict",	"guard_squad_command_squad_dad" },
 				{ 3, 50, 15, 0, 100,	 "Addon",	"addon_guard_ogryn_quarters" },
 				{ 3, 50, 15, 0, 100,	 "Addon",	"addon_guard_kasrkin_quarters" },
 				{ 3, 180, 60, 0, 1,	 "Unit",	"guard_squad_ogryns" },
@@ -197,6 +207,7 @@ BuildBaseStrategyInfo =
 				{ 3, 50, 100, 2000, 1,	 "Addon",	"addon_guard_marauder_depot" },
 				{ 3, 50, 25, 2000, 1,	 "Addon",	"addon_guard_vindicare_temple" },
 				{ 3, 90, 30, 2000, 4,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 3, 250, 150, 2000, 2,	 "Building",    "guard_earthshaker" },
 				{ 3, 50, 50, 2000, 4,	 "Building",	"guard_mines" },
 				{ 3, 450, 450, 2000, 1,	 "Research",    "guard_full_scale_war" },
 
@@ -204,6 +215,7 @@ BuildBaseStrategyInfo =
 				{ 4, 200, 50, 2000, 1,	 "Building",    "guard_mars_pattern" },
 				{ 4, 400, 400, 0, 1,	 "Unit",	"guard_squad_baneblade" },
 				{ 4, 90, 30, 2000, 6,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 4, 250, 150, 2000, 3,	 "Building",    "guard_earthshaker" },
 				{ 4, 50, 50, 2000, 6,	 "Building",	"guard_mines" },
 				{ 4, 250, 100, 3000, 100,"TurretAddon", "addon_guard_list_post_2" },
 				{ 4, 700, 150, 4000, 2,	 "Building",    "guard_hq" }
@@ -224,7 +236,8 @@ BuildBaseStrategyInfo =
 				{ 2, 0, 0, 0, 1,	 "Rush", 	"Prepare" },
 				{ 2, 200, 125, 0, 1,	 "Building",    "guard_mechanized" },
 				{ 2, 100, 50, 0, 100,	 "Addon",	"addon_guard_hellhound_depot" },
-				{ 2, 120, 15, 0, 1,	 "Unit",	"guard_squad_command_squad" },
+				{ 2, 120, 15, 0, 1,	 "Unit",	"guard_squad_command_squad_dad" },
+				{ 2, 120, 25, 0, 1,	 "Unit",	"guard_squad_command_squad" },
 				{ 2, 150, 150, 0, 2,	 "Unit",	"guard_squad_hellhound" },
 				{ 2, 50, 25, 0, 100,	 "Addon",	"addon_guard_sentinel_depot" },
 				{ 2, 150, 150, 0, 1,	 "Unit",	"guard_squad_sentinel" },
@@ -243,9 +256,10 @@ BuildBaseStrategyInfo =
 				{ 2, 340, 340, 1500, 1,	 "Addon",	"addon_guard_hq_2" },
 				{ 2, 250, 100, 2000, 40, "TurretAddon", "addon_guard_list_post_2" },
 				{ 2, 90, 30, 2000, 2,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 2, 250, 150, 2000, 1,	 "Building",    "guard_earthshaker" },
 				{ 2, 50, 50, 2000, 2,	 "Building",	"guard_mines" },
 
-				{ 3, 0, 0, 0, 1,	 "Restrict",	"guard_squad_command_squad" },
+				{ 3, 0, 0, 0, 1,	 "Restrict",	"guard_squad_command_squad_dad" },
 				{ 3, 50, 15, 0, 100,	 "Addon",	"addon_guard_ogryn_quarters" },
 				{ 3, 50, 15, 0, 100,	 "Addon",	"addon_guard_kasrkin_quarters" },
 				{ 3, 180, 60, 0, 1,	 "Unit",	"guard_squad_ogryns" },
@@ -255,6 +269,7 @@ BuildBaseStrategyInfo =
 				{ 3, 50, 100, 2000, 1,	 "Addon",	"addon_guard_marauder_depot" },
 				{ 3, 50, 25, 2000, 1,	 "Addon",	"addon_guard_vindicare_temple" },
 				{ 3, 90, 30, 2000, 4,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 3, 250, 150, 2000, 2,	 "Building",    "guard_earthshaker" },
 				{ 3, 50, 50, 2000, 4,	 "Building",	"guard_mines" },
 				{ 3, 450, 450, 2000, 1,	 "Research",    "guard_full_scale_war" },
 
@@ -262,6 +277,7 @@ BuildBaseStrategyInfo =
 				{ 4, 200, 50, 2000, 1,	 "Building",    "guard_mars_pattern" },
 				{ 4, 400, 400, 0, 1,	 "Unit",	"guard_squad_baneblade" },
 				{ 4, 90, 30, 2000, 6,	 "Building",    "guard_turret_heavy_bolter" },
+				{ 4, 250, 150, 2000, 3,	 "Building",    "guard_earthshaker" },
 				{ 4, 50, 50, 2000, 6,	 "Building",	"guard_mines" },
 				{ 4, 250, 100, 3000, 100,"TurretAddon", "addon_guard_list_post_2" },
 				{ 4, 700, 150, 4000, 2,	 "Building",    "guard_hq" }
@@ -274,11 +290,13 @@ BuildBaseStrategyInfo =
 			{
 				guard_squad_enginseer = 0,
 				guard_squad_guardsmen = math.random( 5,7 ),
+				guard_squad_sniper_team = math.random( 2,3 ),
 				guard_squad_command_squad = 1,
+				guard_squad_command_squad_dad = 1,
 				guard_heavy_weapons_team_squad = math.random( 3,5 ),
-				guard_squad_kasrkin = 1,
+				guard_squad_kasrkin = 3,
 				guard_squad_assassin = 1,
-				guard_squad_ogryns = 1,
+				guard_squad_ogryns = 3,
 				guard_squad_psyker = 3,
 				guard_squad_priest = 3,
 				guard_squad_commissar = 3,
@@ -287,8 +305,13 @@ BuildBaseStrategyInfo =
 				guard_squad_marauder = 2,
 				guard_squad_basilisk = 3,
 				guard_squad_chimera = math.random( 4,6 ),
-				guard_squad_lemanruss = 2,
-				guard_squad_baneblade = 1,
+				guard_squad_lemanruss = math.random( 1,4 ),
+				guard_squad_lemanruss_conqueror = math.random( 1,4 ),
+				guard_squad_lemanruss_demolisher = math.random( 1,4 ),
+				guard_squad_lemanruss_exterminator = math.random( 1,4 ),
+				guard_squad_lemanruss_vanquisher = 1,
+				guard_squad_baneblade = math.random( 1,2 ),
+				guard_squad_stormblade = math.random( 1,2 ),
 			}
 		}
 	}

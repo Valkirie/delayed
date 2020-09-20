@@ -1,0 +1,43 @@
+----------------------------------------
+-- File: 'commandsquadtactic.ai'
+-- Edited by Thudmeizer @ 26.10.2008
+
+class 'CommandHeroTactic' (GuardInfantryTactic)
+
+
+CommandHeroTactic.PosAbilities = 
+{
+	{ nil, "guard_strafing_run",			Ability.Filters.CloseEnemy, 6 },
+}
+
+
+function CommandHeroTactic:__init( squad_ai ) super( squad_ai )
+
+	self:SetName("Commander Tactic")
+	
+	-- Command squad is able to enter a bunker
+	self.m_bBunkerSquad = true
+end
+
+function CommandHeroTactic:InitAbilities()
+
+	if (CommandHeroTactic.PosAbilities[1][1] == nil) then
+		for i in CommandHeroTactic.PosAbilities do
+			local ability_id = cpu_manager.stats:GetAbilityID( CommandHeroTactic.PosAbilities[i][2] )
+			CommandHeroTactic.PosAbilities[i][1] = ability_id
+		end
+	end
+end
+
+function CommandHeroTactic:DoAbilities()
+
+	for i in CommandHeroTactic.PosAbilities do
+		local ability_id = CommandHeroTactic.PosAbilities[i][1]
+		if ability_id ~= nil then
+
+			local filter = CommandHeroTactic.PosAbilities[i][3]
+			local squad_count = CommandHeroTactic.PosAbilities[i][4]
+			Ability.DoAbilityPos( self.squad_ai, ability_id, filter, squad_count ) 
+		end
+	end
+end

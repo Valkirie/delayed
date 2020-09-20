@@ -15,6 +15,8 @@ function GuardInfantryTactic:__init( squad_ai ) super( squad_ai )
 	else
 		self.m_iTransportable = 1
 	end
+	
+	self.m_iDeepStrikeBlueprintID = cpu_manager.stats:GetBuildingID("guard_infantry")
 end
 
 function GuardInfantryTactic:AddTargetAbilities()
@@ -39,6 +41,9 @@ function GuardInfantryTactic:DoAbilities()
 		elseif (self.squad_ai:HasSquadAttached("guard_squad_priest")) then
 			PriestTactic.InitAbilities( self )
 			PriestTactic.DoAbilities( self )
+		elseif (self.squad_ai:HasSquadAttached("guard_squad_command_squad")) then
+			PriestTactic.InitAbilities( self )
+			PriestTactic.DoAbilities( self )
 		end
 	end
 	
@@ -53,7 +58,8 @@ function GuardInfantryTactic:CheckForDetach()
 		(self.squad_ai:IsInCombat() or self.squad_ai:WasRecentlyHurt()) and
 		not self.squad_ai:HasSquadAttached( "guard_squad_commissar" ) and
 		not self.squad_ai:HasSquadAttached( "guard_squad_priest" ) and
-		not self.squad_ai:HasSquadAttached( "guard_squad_psyker" )) then 
+		not self.squad_ai:HasSquadAttached( "guard_squad_psyker" ) and
+		not self.squad_ai:HasSquadAttached( "guard_squad_command_squad" )) then 
 		
 		self.squad_ai:DoDetachSquad()
 		self.squad_ai:DoSetDefaultMeleeStance()

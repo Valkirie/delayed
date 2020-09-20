@@ -31,6 +31,7 @@ function guard_race:LoadRace( eDifficulty )
 	import( 'Races/guard_race/Tactics/EnginseerTactic.ai' )
 	import( 'Races/guard_race/Tactics/GuardSquadTactic.ai' )
 	import( 'Races/guard_race/Tactics/KasrkinTactic.ai' )
+	import( 'Races/guard_race/Tactics/CommandHeroTactic.ai' )
 	import( 'Races/guard_race/Tactics/CommandSquadTactic.ai' )
 	import( 'Races/guard_race/Tactics/PsykerTactic.ai' )
 	import( 'Races/guard_race/Tactics/PriestTactic.ai' )
@@ -44,6 +45,8 @@ function guard_race:LoadRace( eDifficulty )
 	import( 'Races/guard_race/Tactics/SentinelTactic.ai' )
 	import( 'Races/guard_race/Tactics/GuardHQTactic.ai' )
 	import( 'Races/guard_race/Tactics/GuardBunkerTactic.ai' )
+	import( 'Races/guard_race/Tactics/GuardRelayTactic.ai' )
+	import( 'Races/guard_race/Tactics/GuardMarsPatternTactic.ai' )
 	return true
 end
 
@@ -75,9 +78,13 @@ function guard_race:CreateTactic(oSquadAI)
 	local bAirPlane = (eClass == UnitStatsAI.UC_AirLow or eClass == UnitStatsAI.UC_AirMed or eClass == UnitStatsAI.UC_AirHigh)
 	if (sUnitName == "guard_squad_guardsmen") then
 		return GuardSquadTactic(oSquadAI)
+	elseif (sUnitName == "guard_squad_sniper_team") then
+		return KasrkinTactic(oSquadAI)
 	elseif (sUnitName == "guard_squad_kasrkin") then
 		return KasrkinTactic(oSquadAI)
 	elseif (sUnitName == "guard_squad_command_squad") then
+		return CommandHeroTactic(oSquadAI)
+	elseif (sUnitName == "guard_squad_command_squad_dad") then
 		return CommandSquadTactic(oSquadAI)
 	elseif (sUnitName == "guard_squad_priest") then
 		return PriestTactic(oSquadAI)
@@ -121,9 +128,11 @@ function guard_race:CreateBaseTactic(oBuilding)
 	elseif (sBuildingName == "guard_listening_post") then
 		return GuardBunkerTactic(oBuilding)
 	elseif (sBuildingName == "guard_infantry") then
-		return GuardBunkerTactic(oBuilding)
+		return GuardRelayTactic(oBuilding)
 	elseif (sBuildingName == "guard_mechanized") then
 		return GuardBunkerTactic(oBuilding)
+	elseif (sBuildingName == "guard_mars_pattern") then
+		return GuardMarsPatternTactic(oBuilding)
 	end
 	return nil
 end
@@ -180,6 +189,9 @@ function guard_race:GetBuildingType(sBuildingName)
 		
 	elseif (sBuildingName == "guard_turret_heavy_bolter") then
 		return "Turret", 300
+		
+	elseif (sBuildingName == "guard_earthshaker") then
+		return "Turret", 450
 		
 	elseif (sBuildingName == "guard_mines") then
 		return "Mine", 100

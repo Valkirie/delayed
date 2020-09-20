@@ -26,7 +26,9 @@ UnitStrengths.guard_squad_sentinel_advance_sp = 300
 -- Skirmish
 UnitStrengths.guard_squad_enginseer = 0
 UnitStrengths.guard_squad_guardsmen = 20
+UnitStrengths.guard_squad_sniper_team = 40
 UnitStrengths.guard_squad_command_squad = 180
+UnitStrengths.guard_squad_command_squad_dad = 180
 UnitStrengths.guard_heavy_weapons_team_squad = 300
 UnitStrengths.guard_heavy_weapon_team_entrenched_squad_sp = 300
 UnitStrengths.guard_squad_kasrkin = 60
@@ -41,16 +43,24 @@ UnitStrengths.guard_squad_basilisk = 450
 UnitStrengths.guard_squad_marauder = 550
 UnitStrengths.guard_squad_chimera = 170
 UnitStrengths.guard_squad_lemanruss = 450
+UnitStrengths.guard_squad_lemanruss_conqueror = 450
+UnitStrengths.guard_squad_lemanruss_demolisher = 450
+UnitStrengths.guard_squad_lemanruss_exterminator = 450
+UnitStrengths.guard_squad_lemanruss_vanquisher = 550
 UnitStrengths.guard_squad_baneblade = 1000
+UnitStrengths.guard_squad_stormblade = 1000
 
 LeaderStrengths.guard_squad_guardsmen = 60
+LeaderStrengths.guard_squad_sniper_team = 80
 LeaderStrengths.guard_squad_kasrkin = 90
 LeaderStrengths.guard_squad_ogryns = 120
 LeaderStrengths.guard_squad_command_squad = 0
+LeaderStrengths.guard_squad_command_squad_dad = 0
 
-Attachments.guard_squad_guardsmen = { "guard_squad_commissar", "guard_squad_psyker", "guard_squad_priest" }
-Attachments.guard_squad_kasrkin = { "guard_squad_commissar", "guard_squad_psyker", "guard_squad_priest" }
-Attachments.guard_squad_ogryns = { "guard_squad_commissar", "guard_squad_psyker", "guard_squad_priest" }
+Attachments.guard_squad_guardsmen = { "guard_squad_commissar", "guard_squad_psyker", "guard_squad_priest", "guard_squad_command_squad" }
+Attachments.guard_squad_sniper_team = { "guard_squad_commissar", "guard_squad_psyker", "guard_squad_priest", "guard_squad_command_squad" }
+Attachments.guard_squad_kasrkin = { "guard_squad_commissar", "guard_squad_psyker", "guard_squad_priest", "guard_squad_command_squad" }
+Attachments.guard_squad_ogryns = { "guard_squad_commissar", "guard_squad_psyker", "guard_squad_priest", "guard_squad_command_squad" }
 
 GuardUnitStats =
 {
@@ -271,9 +281,29 @@ GuardUnitStats =
 		}
 	},
 	{
-		name = "Command Squad",
+		name = "Command Hero",
 		sbp_name = "guard_squad_command_squad",
 		ebp_name = "guard_leaders_captain",
+		class = UnitStatsAI.UC_Commander,
+		rating = 7,
+		potential =
+		{
+			{
+				name = "guard_laspistol_captain",
+				effectiveness = GenerateUnitEffectiveness(8.6,8.6,8.6,8.6,8.6,5.4,5.4,5.3,8.6,7.4,8.1,0.4,0.7,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_power_gauntlet_captain",
+				effectiveness = GenerateUnitEffectiveness(7.6,8.1,7.9,7.9,7.1,4.5,4.8,0.0,7.7,0.0,6.7,7.9,6.6,5.8,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Melee,
+			},
+		}
+	},
+	{
+		name = "Command Squad",
+		sbp_name = "guard_squad_command_squad_dad",
+		ebp_name = "guard_leaders_captain_dad",
 		class = UnitStatsAI.UC_Commander,
 		rating = 7,
 		potential =
@@ -300,7 +330,22 @@ GuardUnitStats =
 		{
 			{
 				name = "guard_multi_laser_sentinel",
-				effectiveness = GenerateUnitEffectiveness(5.0,5.1,5.0,4.9,5.1,8.3,8.6,5.6,5.0,5.7,5.2,6.5,5.7,5.0,0.0,0.0,0.0),
+				effectiveness = GenerateUnitEffectiveness(math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_flamer_sentinel",
+				effectiveness = GenerateUnitEffectiveness(math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,4.2,4.9,4.5,2.8,4.5,2.1,7.0,5.5,5.7,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_autocannon_sentinel",
+				effectiveness = GenerateUnitEffectiveness(math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,4.2,4.9,4.5,2.8,4.5,2.1,7.0,5.5,5.7,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_lascannon_sentinel",
+				effectiveness = GenerateUnitEffectiveness(3.1,3.0,2.2,2.8,2.1,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,2.8,4.0,5.5,5.7,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
 			},
 		}
@@ -331,6 +376,16 @@ GuardUnitStats =
 			{
 				name = "guard_lasgun_chimera",
 				effectiveness = GenerateUnitEffectiveness(5.2,5.4,5.0,5.4,5.9,5.4,5.0,4.4,5.2,3.6,3.6,4.4,4.1,3.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_bolter_chimera",
+				effectiveness = GenerateUnitEffectiveness(6.2,6.4,6.0,5.4,5.9,5.4,1.0,0.4,5.6,3.6,3.6,4.4,4.1,3.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_autocannon_chimera",
+				effectiveness = GenerateUnitEffectiveness(math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,math.random(4*10,7*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
 			},
 		}
@@ -389,6 +444,11 @@ GuardUnitStats =
 				range = UnitStatsAI.RT_Ranged,
 			},
 			{
+				name = "guard_lascannon_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(3.1,7.4,6.6,5.9,5.1,8.8,8.1,8.4,7.3,8.9,2.3,8.8,8.1,1.1,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
 				name = "guard_battle_cannon_leman_russ",
 				effectiveness = GenerateUnitEffectiveness(7.2,7.1,7.0,6.8,6.1,8.8,8.7,7.7,6.3,5.4,4.1,6.1,5.4,4.4,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
@@ -399,8 +459,218 @@ GuardUnitStats =
 				range = UnitStatsAI.RT_Ranged,
 			},
 			{
+				name = "guard_flamer_leman_russ_right",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_ShortRanged,
+			},
+			{
 				name = "guard_heavy_bolter_leman_russ_left",
 				effectiveness = GenerateUnitEffectiveness(6.4,6.2,6.1,5.9,5.7,4.9,2.7,0.0,5.1,2.5,3.4,5.5,4.6,3.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_flamer_leman_russ_left",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_ShortRanged,
+			},
+			{
+				name = "guard_heavy_stubber_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+		}
+	},
+	{
+		name = "Leman Russ Conqueror",
+		sbp_name = "guard_squad_lemanruss_conqueror",
+		ebp_name = "guard_vehicles_lemanruss_conqueror",
+		class = UnitStatsAI.UC_VehicleHigh,
+		rating = 9,
+		potential =
+		{
+			{
+				name = "guard_heavy_bolter_leman_russ_hull",
+				effectiveness = GenerateUnitEffectiveness(6.1,6.5,6.3,5.4,5.3,5.0,4.2,0.0,5.2,3.6,3.5,7.0,5.6,4.5,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_lascannon_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(3.1,7.4,6.6,5.9,5.1,8.8,8.1,8.4,7.3,8.9,2.3,8.8,8.1,1.1,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_battle_cannon_leman_russ_conqueror",
+				effectiveness = GenerateUnitEffectiveness(math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_bolter_leman_russ_right",
+				effectiveness = GenerateUnitEffectiveness(6.4,6.2,6.1,5.9,5.7,4.9,2.7,0.0,5.1,2.5,3.4,5.5,4.2,0.7,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_flamer_leman_russ_right",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_ShortRanged,
+			},
+			{
+				name = "guard_heavy_bolter_leman_russ_left",
+				effectiveness = GenerateUnitEffectiveness(6.4,6.2,6.1,5.9,5.7,4.9,2.7,0.0,5.1,2.5,3.4,5.5,4.6,3.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_flamer_leman_russ_left",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_ShortRanged,
+			},
+			{
+				name = "guard_heavy_stubber_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_storm_bolter_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(3.7,4.0,3.7,3.7,3.7,1.6,0.6,0.0,3.7,0.0,3.3,3.7,1.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+		}
+	},
+	{
+		name = "Leman Russ Demolisher",
+		sbp_name = "guard_squad_lemanruss_demolisher",
+		ebp_name = "guard_vehicles_lemanruss_demolisher",
+		class = UnitStatsAI.UC_VehicleHigh,
+		rating = 9,
+		potential =
+		{
+			{
+				name = "guard_heavy_bolter_leman_russ_hull",
+				effectiveness = GenerateUnitEffectiveness(6.1,6.5,6.3,5.4,5.3,5.0,4.2,0.0,5.2,3.6,3.5,7.0,5.6,4.5,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_lascannon_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(3.1,7.4,6.6,5.9,5.1,8.8,8.1,8.4,7.3,8.9,2.3,8.8,8.1,1.1,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_battle_cannon_leman_russ_demolisher",
+				effectiveness = GenerateUnitEffectiveness(math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_multi_melta_leman_russ_right",
+				effectiveness = GenerateUnitEffectiveness(4.6,4.7,4.2,4.7,5.7,9.0,9.1,8.1,4.3,8.4,3.9,7.0,7.6,5.1,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_flamer_leman_russ_right",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_ShortRanged,
+			},
+			{
+				name = "guard_multi_melta_leman_russ_left",
+				effectiveness = GenerateUnitEffectiveness(4.6,4.7,4.2,4.7,5.7,9.0,9.1,8.1,4.3,8.4,3.9,7.0,7.6,5.1,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_flamer_leman_russ_left",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_ShortRanged,
+			},
+			{
+				name = "guard_heavy_stubber_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+		}
+	},
+	{
+		name = "Leman Russ Exterminator",
+		sbp_name = "guard_squad_lemanruss_exterminator",
+		ebp_name = "guard_vehicles_lemanruss_exterminator",
+		class = UnitStatsAI.UC_VehicleHigh,
+		rating = 9,
+		potential =
+		{
+			{
+				name = "guard_heavy_bolter_leman_russ_hull",
+				effectiveness = GenerateUnitEffectiveness(6.1,6.5,6.3,5.4,5.3,5.0,4.2,0.0,5.2,3.6,3.5,7.0,5.6,4.5,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_lascannon_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(3.1,7.4,6.6,5.9,5.1,8.8,8.1,8.4,7.3,8.9,2.3,8.8,8.1,1.1,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_autocannon_exterminator",				 
+				effectiveness = GenerateUnitEffectiveness(math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_bolter_leman_russ_right",
+				effectiveness = GenerateUnitEffectiveness(6.4,6.2,6.1,5.9,5.7,4.9,2.7,0.0,5.1,2.5,3.4,5.5,4.2,0.7,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_bolter_leman_russ_left",
+				effectiveness = GenerateUnitEffectiveness(6.4,6.2,6.1,5.9,5.7,4.9,2.7,0.0,5.1,2.5,3.4,5.5,4.6,3.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_stubber_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_plasma_cannon_leman_russ_right",
+				effectiveness = GenerateUnitEffectiveness(4.0,3.8,3.5,2.9,2.4,3.6,3.2,1.2,2.3,1.4,1.0,2.4,1.8,0.9,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_plasma_cannon_leman_russ_left",
+				effectiveness = GenerateUnitEffectiveness(4.0,3.8,3.5,2.9,2.4,3.6,3.2,1.2,2.3,1.4,1.0,2.4,1.5,0.9,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+		}
+	},
+	{
+		name = "Leman Russ Vanquisher",
+		sbp_name = "guard_squad_lemanruss_vanquisher",
+		ebp_name = "guard_vehicles_lemanruss_vanquisher",
+		class = UnitStatsAI.UC_VehicleHigh,
+		rating = 9,
+		potential =
+		{
+			{
+				name = "guard_lascannon_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(3.1,7.4,6.6,5.9,5.1,8.8,8.1,8.4,7.3,8.9,2.3,8.8,8.1,1.1,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_battle_cannon_leman_russ_vanquisher",
+				effectiveness = GenerateUnitEffectiveness(math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,math.random(5*10,7*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_bolter_leman_russ_right",
+				effectiveness = GenerateUnitEffectiveness(6.4,6.2,6.1,5.9,5.7,4.9,2.7,0.0,5.1,2.5,3.4,5.5,4.2,0.7,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_bolter_leman_russ_left",
+				effectiveness = GenerateUnitEffectiveness(6.4,6.2,6.1,5.9,5.7,4.9,2.7,0.0,5.1,2.5,3.4,5.5,4.6,3.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_heavy_stubber_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(6.5,6.2,5.9,5.6,5.3,1.7,0.7,0.0,5.6,2.9,4.7,4.0,6.6,6.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "guard_storm_bolter_leman_russ",
+				effectiveness = GenerateUnitEffectiveness(3.7,4.0,3.7,3.7,3.7,1.6,0.6,0.0,3.7,0.0,3.3,3.7,1.9,0.0,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
 			},
 		}
@@ -451,6 +721,46 @@ GuardUnitStats =
 			{
 				name = "guard_lascannon_baneblade_1",
 				effectiveness = GenerateUnitEffectiveness(6.2,6.2,6.2,7.2,7.1,7.3,7.1,6.9,7.0,6.6,4.0,6.4,5.1,4.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+		}
+	},
+	{
+		name = "Stormblade",
+		sbp_name = "guard_squad_stormblade",
+		ebp_name = "guard_vehicles_stormblade",
+		class = UnitStatsAI.UC_VehicleHigh,
+		rating = math.random(8*10,9*10)/10,
+		potential =
+		{
+			{
+				name = "steel_legion_stormblade_plasmacannon",
+				effectiveness = GenerateUnitEffectiveness(math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "steel_legion_stormblade_right_lascannon",
+				effectiveness = GenerateUnitEffectiveness(6.2,6.2,6.2,7.2,7.1,7.3,7.1,6.9,7.0,6.6,4.0,6.4,5.1,4.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "steel_legion_stormblade_left_lascannon",
+				effectiveness = GenerateUnitEffectiveness(6.2,6.2,6.2,7.2,7.1,7.3,7.1,6.9,7.0,6.6,4.0,6.4,5.1,4.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "steel_legion_stormblade_hull_heavybolter",
+				effectiveness = GenerateUnitEffectiveness(6.0,5.8,5.7,5.5,5.3,3.1,0.0,0.0,5.5,3.7,3.1,4.4,2.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "steel_legion_stormblade_right_heavybolter",
+				effectiveness = GenerateUnitEffectiveness(6.0,5.8,5.7,5.5,5.3,3.1,0.0,0.0,5.5,3.7,3.1,4.4,2.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "steel_legion_stormblade_left_heavybolter",
+				effectiveness = GenerateUnitEffectiveness(6.0,5.8,5.7,5.5,5.3,3.1,0.0,0.0,5.5,3.7,3.1,4.4,2.9,0.0,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
 			},
 		}

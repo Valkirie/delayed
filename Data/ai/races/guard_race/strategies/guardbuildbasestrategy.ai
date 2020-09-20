@@ -233,7 +233,11 @@ function GuardBuildBaseStrategy:GetUnitStats(sSquadName)
 
 	if (sSquadName == "guard_squad_guardsmen") then
 		return 2, 0
+	elseif (sSquadName == "guard_squad_sniper_team") then
+		return 2, 0
 	elseif (sSquadName == "guard_squad_command_squad") then
+		return 2, 0
+	elseif (sSquadName == "guard_squad_command_squad_dad") then
 		return 2, 0
 	elseif (sSquadName == "guard_heavy_weapons_team_squad") then
 		return 2, 0
@@ -252,9 +256,19 @@ function GuardBuildBaseStrategy:GetUnitStats(sSquadName)
 	elseif (sSquadName == "guard_squad_marauder") then
 		return 0, 4
 	elseif (sSquadName == "guard_squad_lemanruss") then
-		return 0, 5
-	elseif (sSquadName == "guard_squad_baneblade") then
 		return 0, 3
+	elseif (sSquadName == "guard_squad_lemanruss_conqueror") then
+		return 0, 3
+	elseif (sSquadName == "guard_squad_lemanruss_demolisher") then
+		return 0, 3
+	elseif (sSquadName == "guard_squad_lemanruss_exterminator") then
+		return 0, 3
+	elseif (sSquadName == "guard_squad_lemanruss_vanquisher") then
+		return 0, 3
+	elseif (sSquadName == "guard_squad_baneblade") then
+		return 0, 5
+	elseif (sSquadName == "guard_squad_stormblade") then
+		return 0, 5
 	end
 	return 0, 0
 end
@@ -314,7 +328,7 @@ function GuardBuildBaseStrategy:BuildFlexible()
 			end
 			
 			-- Compute commander researches
-			self:DynamicResearch("guard_research_command_squad_size", 1, 100, 100, 0, 0, "guard_squad_command_squad", 1)	-- Uncommon valor
+			self:DynamicResearch("guard_research_command_squad_size", 1, 100, 100, 0, 0, "guard_squad_command_squad_dad", 1)	-- Uncommon valor
 		end
 	end
 	
