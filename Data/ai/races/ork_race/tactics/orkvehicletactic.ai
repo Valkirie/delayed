@@ -7,6 +7,10 @@ class 'OrkVehicleTactic' (VehicleTactic)
 function OrkVehicleTactic:__init( squad_ai ) super( squad_ai )
 
 	self:SetName("Ork Vehicle Tactic")
+	
+	if (sSquadName == "ork_squad_killa_kan") then
+		self.m_iDeepStrikeBlueprintID = cpu_manager.stats:GetBuildingID("ork_mek_shop")
+	end
 end
 
 -- Check if the vehicle should dance away in melee

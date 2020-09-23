@@ -15,6 +15,8 @@ function OrkInfantryTactic:__init( squad_ai ) super( squad_ai )
 	elseif (sSquadName ~= "ork_squad_stormboy") then
 		self.m_iTransportable = 1
 	end
+	
+	self.m_iDeepStrikeBlueprintID = cpu_manager.stats:GetBuildingID("ork_boy_hut")
 end
 
 function OrkInfantryTactic:AddCommanders()

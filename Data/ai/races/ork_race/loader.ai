@@ -40,6 +40,7 @@ function ork_race:LoadRace( eDifficulty )
 	import( 'Races/ork_race/Tactics/MegaNobzTactic.ai' )
 	import( 'Races/ork_race/Tactics/ShootaTactic.ai' )
 	import( 'Races/ork_race/Tactics/GrotTactic.ai' )
+	import( 'Races/ork_race/Tactics/MekShopTactic.ai' )
 	return true
 end
 
@@ -101,6 +102,16 @@ end
 
 -- Creates a base tactic
 function ork_race:CreateBaseTactic(oBuilding)
+
+	-- Get building name
+	local sBuildingName = oBuilding:GetBaseName()
+	
+	-- Check if their is a special tactic for the building available
+	if (sBuildingName == "ork_mek_shop") then
+		return MekShopTactic(oBuilding)
+	elseif (sBuildingName == "ork_boy_hut") then
+		return MekShopTactic(oBuilding)
+	end
 	return nil
 end
 

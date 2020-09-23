@@ -1,0 +1,36 @@
+----------------------------------------
+-- File: 'mekshoptactic.ai'
+-- Edited by Arkhan		@ 15.01.2007
+
+class 'MekShopTactic' (BaseTactic)
+
+function MekShopTactic:__init( base_ai ) super( base_ai )
+
+	self:SetName("Mek Shop Tactic")
+
+	-- Building can deepstrike troops
+	self.m_bCanDeepStrikeTroops = true
+end
+
+function MekShopTactic:CanDeepStrikeTroops()
+
+	-- Prepare
+	local iHQAddonID = cpu_manager.stats:GetAddOnID("ork_hq_addon")
+	local oStats = cpu_manager.stats:GetPlayerStatsFromID( cpu_manager.player_id )
+	
+	-- Check HQ's for addons
+	for oBase in oStats:GetBases() do
+
+		-- Check for valid building
+		if (oBase:IsValid() and not oBase:IsListeningPost()) then
+
+			-- Check for HQ addon
+			if (oBase:HasAddOn(iHQAddonID)) then
+			
+				return true
+			end
+		end
+	end
+
+	return false
+end
