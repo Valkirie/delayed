@@ -12,7 +12,7 @@ function OrkInfantryTactic:__init( squad_ai ) super( squad_ai )
 	local sSquadName = squad_ai:GetSquadName()
 	if (sSquadName == "ork_flash_gitz_squad" or sSquadName == "ork_squad_nob" or sSquadName == "ork_squad_armored_nob") then
 		self.m_iTransportable = 2
-	elseif (sSquadName ~= "ork_squad_stormboy") then
+	else
 		self.m_iTransportable = 1
 	end
 	
