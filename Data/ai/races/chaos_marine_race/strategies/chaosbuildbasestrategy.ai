@@ -251,6 +251,16 @@ end
 
 function ChaosBuildBaseStrategy:BuildFlexible()
 
+	self:DynamicResearch("chaos_wargear06", 1, 125, 75, 2, 0, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear07", 1, 100, 50, 2, 0, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear01", 2, 175, 75, 4, 2, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear03", 2, 100, 100, 4, 2, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear09", 2, 150, 100, 4, 2, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear05", 3, 150, 75, 4, 2, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear08", 3, 175, 100, 4, 2, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear02", 4, 300, 100, 4, 2, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear04", 4, 175, 225, 4, 2, "chaos_squad_lord", 1)
+	self:DynamicResearch("chaos_wargear10", 4, 75, 150, 4, 2, "chaos_squad_lord", 1)
 	-- Dynamic research item syntax: ResearchName, MinTier, RequisitionCost, PowerCost, MinSquadCap, MinSupportCap, SquadName, SquadMinCount
 	local iArmyStrength = cpu_manager:GetArmyStrength()
 	local iCommanderSquads = self:CountSquads("chaos_squad_lord") + self:CountSquads("chaos_squad_sorcerer")

@@ -241,6 +241,16 @@ end
 
 function OrkBuildBaseStrategy:BuildFlexible()
 
+	self:DynamicResearch("ork_wargear06", 1, 125, 75, 2, 0, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear07", 1, 100, 50, 2, 0, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear10", 1, 75, 150, 2, 0, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear01", 2, 175, 75, 4, 2, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear03", 2, 100, 100, 4, 2, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear09", 2, 150, 100, 4, 2, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear05", 3, 150, 75, 4, 2, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear08", 3, 175, 100, 4, 2, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear02", 4, 300, 100, 4, 2, "ork_squad_warboss", 1)
+	self:DynamicResearch("ork_wargear04", 4, 175, 225, 4, 2, "ork_squad_warboss", 1)
 	-- Dynamic research item syntax: ResearchName, MinTier, RequisitionCost, PowerCost, MinSquadCap, MinSupportCap, SquadName, SquadMinCount
 	local iArmyStrength = cpu_manager:GetArmyStrength()
 	local iCommanderSquads = self:CountSquads("ork_squad_mek_boy") + self:CountSquads("ork_squad_warboss")

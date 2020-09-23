@@ -265,6 +265,16 @@ end
 
 function MarineBuildBaseStrategy:BuildFlexible()
 
+	self:DynamicResearch("marine_wargear06", 1, 125, 75, 2, 0, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear07", 1, 100, 50, 2, 0, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear10", 1, 75, 150, 2, 0, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear01", 2, 175, 75, 4, 2, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear03", 2, 100, 100, 4, 2, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear09", 2, 150, 100, 4, 2, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear05", 3, 150, 75, 4, 2, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear08", 3, 175, 100, 4, 2, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear02", 4, 300, 100, 4, 2, "space_marine_squad_force_commander", 1)
+	self:DynamicResearch("marine_wargear04", 4, 175, 225, 4, 2, "space_marine_squad_force_commander", 1)
 	-- Dynamic research item syntax: ResearchName, MinTier, RequisitionCost, PowerCost, MinSquadCap, MinSupportCap, SquadName, SquadMinCount
 	local iArmyStrength = cpu_manager:GetArmyStrength()
 	local iLibrarianSquads	= self:CountSquads("space_marine_squad_librarian")

@@ -252,6 +252,16 @@ end
 
 function NecronBuildBaseStrategy:BuildFlexible()
   
+	self:DynamicResearch("necron_wargear06", 1, 125, 75, 2, 0, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear07", 1, 100, 50, 2, 0, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear10", 1, 75, 150, 2, 0, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear01", 2, 175, 75, 4, 2, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear03", 2, 100, 100, 4, 2, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear09", 2, 150, 100, 4, 2, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear05", 3, 150, 75, 4, 2, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear08", 3, 175, 100, 4, 2, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear02", 4, 300, 100, 4, 2, "necron_lord_squad", 1)
+	self:DynamicResearch("necron_wargear04", 4, 175, 225, 4, 2, "necron_lord_squad", 1)
 	-- Dynamic research
 	-- Item-Syntax: ResearchName, MinTier, RequisitionCost, PowerCost, MinSquadCap, MinSupportCap, SquadName, SquadMinCount
 	

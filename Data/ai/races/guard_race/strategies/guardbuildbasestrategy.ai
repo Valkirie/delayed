@@ -311,6 +311,16 @@ end
 
 function GuardBuildBaseStrategy:BuildFlexible()
   
+	self:DynamicResearch("guard_wargear06", 1, 125, 75, 2, 0, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear07", 1, 100, 50, 2, 0, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear10", 1, 75, 150, 2, 0, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear01", 2, 175, 75, 4, 2, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear03", 2, 100, 100, 4, 2, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear09", 2, 150, 100, 4, 2, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear05", 3, 150, 75, 4, 2, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear08", 3, 175, 100, 4, 2, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear02", 4, 300, 100, 4, 2, "guard_squad_command_squad", 1)
+	self:DynamicResearch("guard_wargear04", 4, 175, 225, 4, 2, "guard_squad_command_squad", 1)
 	-- Dynamic research item syntax: ResearchName, MinTier, RequisitionCost, PowerCost, MinSquadCap, MinSupportCap, SquadName, SquadMinCount
 	local iArmyStrength = cpu_manager:GetArmyStrength()
 	local iBasicInfantrySquads = self:CountSquads("guard_squad_guardsmen")

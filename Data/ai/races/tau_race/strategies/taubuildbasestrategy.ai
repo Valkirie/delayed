@@ -207,6 +207,16 @@ end
 
 function TauBuildBaseStrategy:BuildFlexible()
 
+	self:DynamicResearch("tau_wargear06", 1, 125, 75, 2, 0, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear07", 1, 100, 50, 2, 0, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear09", 1, 150, 100, 4, 2, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear01", 2, 175, 75, 4, 2, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear03", 2, 100, 100, 4, 2, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear10", 2, 75, 150, 2, 0, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear05", 3, 150, 75, 4, 2, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear08", 3, 175, 100, 4, 2, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear02", 4, 300, 100, 4, 2, "tau_commander_squad", 1)
+	self:DynamicResearch("tau_wargear04", 4, 175, 225, 4, 2, "tau_commander_squad", 1)
 	-- Dynamic research item syntax: ResearchName, MinTier, RequisitionCost, PowerCost, MinSquadCap, MinSupportCap, SquadName, SquadMinCount
 	local iArmyStrength = cpu_manager:GetArmyStrength()
 	local iScoutSquads = self:CountSquads("tau_stealth_team_squad")
