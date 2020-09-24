@@ -79,6 +79,7 @@ BuildBaseStrategyInfo =
 				{ 4, 200, 0, 0, 1,	 "Research",    "ork_recruitment" },
 				{ 4, 0, 0, 0, 4,	 "Unit",	"ork_squad_slugga" },
 				{ 4, 400, 400, 0, 1,	 "Unit",	"ork_squad_squiggoth" },
+				{ 4, 600, 600, 0, 1,	 "Unit",	"ork_squad_battlefortress" },
 				{ 4, 50, 50, 2000, 6,	 "Building",	"ork_mine_field" },
 				{ 4, 250, 145, 3000, 100,"TurretAddon", "ork_gork_totem_addon_2" },
 				{ 4, 650, 150, 4000, 2,	 "Building",	"ork_hq" }
@@ -134,6 +135,7 @@ BuildBaseStrategyInfo =
 				{ 4, 200, 0, 0, 1,	 "Research",    "ork_recruitment" },
 				{ 4, 0, 0, 0, 4,	 "Unit",	"ork_squad_slugga" },
 				{ 4, 400, 400, 0, 1,	 "Unit",	"ork_squad_squiggoth" },
+				{ 4, 600, 600, 0, 1,	 "Unit",	"ork_squad_battlefortress" },
 				{ 4, 50, 50, 2000, 6,	 "Building",	"ork_mine_field" },
 				{ 4, 250, 145, 3000, 100,"TurretAddon", "ork_gork_totem_addon_2" },
 				{ 4, 650, 150, 4000, 2,	 "Building",	"ork_hq" }
@@ -187,6 +189,7 @@ BuildBaseStrategyInfo =
 				{ 4, 200, 0, 0, 1,	 "Research",    "ork_recruitment" },
 				{ 4, 0, 0, 0, 4,	 "Unit",	"ork_squad_slugga" },
 				{ 4, 400, 400, 0, 1,	 "Unit",	"ork_squad_squiggoth" },
+				{ 4, 600, 600, 0, 1,	 "Unit",	"ork_squad_battlefortress" },
 				{ 4, 50, 50, 2000, 6,	 "Building",	"ork_mine_field" },
 				{ 4, 250, 145, 3000, 100,"TurretAddon", "ork_gork_totem_addon_2" },
 				{ 4, 650, 150, 4000, 2,	 "Building",	"ork_hq" }
@@ -238,6 +241,7 @@ BuildBaseStrategyInfo =
 				{ 4, 200, 0, 0, 1,	 "Research",    "ork_recruitment" },
 				{ 4, 0, 0, 0, 4,	 "Unit",	"ork_squad_slugga" },
 				{ 4, 400, 400, 0, 1,	 "Unit",	"ork_squad_squiggoth" },
+				{ 4, 600, 600, 0, 1,	 "Unit",	"ork_squad_battlefortress" },
 				{ 4, 50, 50, 2000, 6,	 "Building",	"ork_mine_field" },
 				{ 4, 250, 145, 3000, 100,"TurretAddon", "ork_gork_totem_addon_2" },
 				{ 4, 650, 150, 4000, 2,	 "Building",	"ork_hq" }
@@ -265,6 +269,7 @@ BuildBaseStrategyInfo =
 				ork_squad_fighta_bomba = 2,
 				ork_squad_looted_tank = 2,
 				ork_squad_squiggoth = 1,
+				ork_squad_battlefortress = 1,
 			}
 		}
 	},

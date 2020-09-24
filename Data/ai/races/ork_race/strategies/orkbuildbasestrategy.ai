@@ -199,6 +199,8 @@ function OrkBuildBaseStrategy:GetUnitStats(sSquadName)
 		return 0, 5
 	elseif (sSquadName == "ork_squad_squiggoth") then
 		return 0, 3
+	elseif (sSquadName == "ork_squad_battlefortress") then
+		return 0, 3
 	end
 	return 0, 0
 end
@@ -496,7 +498,7 @@ end
 function OrkBuildBaseStrategy:RelicRequired(sName)
 
 	-- Check name
-	if (sName == "ork_squad_squiggoth") then
+	if (sName == "ork_squad_squiggoth" or sName == "ork_squad_battlefortress") then
 		return true
 	end
 	return false

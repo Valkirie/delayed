@@ -41,6 +41,7 @@ UnitStrengths.ork_squad_killa_kan = 310
 UnitStrengths.ork_squad_fighta_bomba = 350
 UnitStrengths.ork_squad_looted_tank = 450
 UnitStrengths.ork_squad_squiggoth = 1000
+UnitStrengths.ork_squad_battlefortress = 1000
 
 LeaderStrengths.ork_squad_slugga = 75
 LeaderStrengths.ork_squad_shoota_boy = 75
@@ -319,6 +320,11 @@ OrkUnitStats =
 				effectiveness = GenerateUnitEffectiveness(6.0,6.6,6.2,4.2,4.0,3.4,0.0,0.0,6.0,0.0,5.4,4.1,4.1,1.0,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
 			},
+			{
+				name = "ork_big_shoota_twin_turret",
+				effectiveness = GenerateUnitEffectiveness(6.0,5.7,5.1,0.0,0.0,7.6,7.1,7.0,6.0,6.5,6.0,5.1,0.0,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
 		}
 	},
 	{
@@ -419,6 +425,11 @@ OrkUnitStats =
 				effectiveness = GenerateUnitEffectiveness(6.2,6.6,6.2,5.6,4.4,6.4,5.2,0.0,5.5,4.4,3.8,6.3,4.7,5.5,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
 			},
+			{
+				name = "ork_zzzap_gun_looted_tank",
+				effectiveness = GenerateUnitEffectiveness(9.2,9.2,9.2,9.2,7.4,8.3,8.0,7.6,7.4,6.5,6.8,8.3,8.0,7.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
 		}
 	},
 	{
@@ -448,6 +459,71 @@ OrkUnitStats =
 				name = "ork_big_shoota_twin_squig_r",
 				effectiveness = GenerateUnitEffectiveness(6.0,5.7,5.1,0.0,5.1,7.6,7.1,7.0,6.0,6.5,6.0,0.0,0.0,0.0,0.0,0.0,0.0),
 				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_rokkit_launcher_twin_squiggoth_l",
+				effectiveness = GenerateUnitEffectiveness(4.1,3.9,3.1,4.2,2.8,10.0,10.0,4.3,4.2,5.8,2.8,8.6,5.7,2.9,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_rokkit_launcher_twin_squiggoth_r",
+				effectiveness = GenerateUnitEffectiveness(4.1,3.9,3.1,4.2,2.8,10.0,10.0,4.3,4.2,5.8,2.8,8.6,5.7,2.9,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+		}
+	},
+	{
+		name = "Battlefortress",
+		sbp_name = "ork_squad_battlefortress",
+		ebp_name = "ork_battlefortress",
+		class = UnitStatsAI.UC_MonsterHigh,
+		rating = 10.0,
+		potential =
+		{
+			{
+				name = "ork_battlecannon_battlefortress",
+				effectiveness = GenerateUnitEffectiveness(math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,math.random(7*10,8*10)/10,6.1,2.3,3.1,3.7,1.9,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_zzzap_gun_battlefortess_l",
+				effectiveness = GenerateUnitEffectiveness(9.2,9.2,9.2,9.2,7.4,8.3,8.0,7.6,7.4,6.5,6.8,8.3,8.0,7.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_zzzap_gun_battlefortess_r",
+				effectiveness = GenerateUnitEffectiveness(9.2,9.2,9.2,9.2,7.4,8.3,8.0,7.6,7.4,6.5,6.8,8.3,8.0,7.6,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_rokkit_launcher_battlefortress",
+				effectiveness = GenerateUnitEffectiveness(4.4,0.0,0.0,2.7,0.0,7.1,6.9,5.8,0.0,5.8,2.7,7.5,7.3,6.8,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_big_shoota_twin_battlefortress_front",
+				effectiveness = GenerateUnitEffectiveness(8.2,7.4,6.0,2.7,2.7,10.0,10.0,10.0,8.2,10.0,8.2,3.7,0.0,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_big_shoota_twin_battlefortress_l",
+				effectiveness = GenerateUnitEffectiveness(8.2,7.4,6.0,2.7,2.7,10.0,10.0,10.0,8.2,10.0,8.2,3.7,0.0,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_big_shoota_twin_battlefortress_r",
+				effectiveness = GenerateUnitEffectiveness(8.2,7.4,6.0,2.7,2.7,10.0,10.0,10.0,8.2,10.0,8.2,3.7,0.0,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_big_shoota_battlefortress_back",
+				effectiveness = GenerateUnitEffectiveness(8.2,7.4,6.0,2.7,2.7,10.0,10.0,10.0,8.2,10.0,8.2,3.7,0.0,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "ork_battlefortress_roller",
+				effectiveness = GenerateUnitEffectiveness(8.2,7.4,6.0,2.7,2.7,10.0,10.0,10.0,8.2,10.0,8.2,3.7,0.0,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Melee,
 			},
 		}
 	},
