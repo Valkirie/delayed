@@ -369,6 +369,8 @@ function TauBuildBaseStrategy:GetPlacementType(iBuildingID)
 			iBuildingID == cpu_manager.stats:GetBuildingID("tau_kroot_nest") or
 			iBuildingID == cpu_manager.stats:GetBuildingID("tau_vehicle_building")) then
 		return "Military"
+	elseif (cpu_manager:IsTurret(iBuildingID)) then
+		return "Front2"
 	elseif (cpu_manager:IsGenerator(iBuildingID) or
 			iBuildingID == cpu_manager.stats:GetBuildingID("tau_research_building") or
 			iBuildingID == cpu_manager.stats:GetBuildingID("tau_shrine_of_montka") or
