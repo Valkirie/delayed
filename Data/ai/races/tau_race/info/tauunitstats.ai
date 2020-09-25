@@ -53,6 +53,7 @@ LeaderStrengths.tau_vespid_auxiliary_squad = 75
 
 Attachments.tau_kroot_carnivore_squad = { "tau_kroot_shaper_squad" }
 Attachments.tau_kroot_hound_squad = { "tau_kroot_shaper_squad" }
+Attachments.tau_honor_guard_crisis_suit_squad_advance_sp = { "tau_ethereal_squad" }
 
 TauUnitStats =
 {
@@ -495,6 +496,21 @@ TauUnitStats =
 		rating = 10.0,
 		potential =
 		{
+			{
+				name = "tau_greater_knarloc_claw",
+				effectiveness = GenerateUnitEffectiveness(9.3,10.0,10.0,9.8,9.3,10.0,10.0,9.8,10.0,9.6,7.4,9.0,8.1,6.2,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Melee,
+			},
+			{
+				name = "tau_kroot_bolt_thrower_explosive_ammo",
+				effectiveness = GenerateUnitEffectiveness(5.6,5.6,5.6,5.6,5.6,5.2,5.1,4.5,5.8,5.2,5.2,5.3,5.1,4.5,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
+			{
+				name = "tau_kroot_bolt_thrower",
+				effectiveness = GenerateUnitEffectiveness(3.6,3.7,3.7,3.5,3.0,0.5,0.5,0.0,3.7,2.2,3.0,0.3,0.1,0.0,0.0,0.0,0.0),
+				range = UnitStatsAI.RT_Ranged,
+			},
 			{
 				name = "tau_greater_knarloc_claw",
 				effectiveness = GenerateUnitEffectiveness(9.3,10.0,10.0,9.8,9.3,10.0,10.0,9.8,10.0,9.6,7.4,9.0,8.1,6.2,0.0,0.0,0.0),
