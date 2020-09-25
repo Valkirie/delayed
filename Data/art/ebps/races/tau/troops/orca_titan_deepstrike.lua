@@ -12,8 +12,8 @@ simvis_attributes =
 	shadow_type			= 3,
 	shadow_scale			= 0.7,
 	
-	vis_scale_min			= 3.2,	
-	vis_scale_max			= 3.2,
+	vis_scale_min			= 2.7,	
+	vis_scale_max			= 2.7,
 
 	-- this only makes sense for shadows type 2..
 	-- uses the current mesh bbox instead of the overall (sum of motions) bbox
