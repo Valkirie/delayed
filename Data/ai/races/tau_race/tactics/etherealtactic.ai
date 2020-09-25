@@ -77,5 +77,8 @@ function EtherealTactic:Update()
     elseif (self.squad_ai:GetHealthPercentage() > 0.9 and self.squad_ai:CanDoAbility(Ethereal.deathpulse_id)) then
 		self.m_bRecover = false
     end
+	
+	-- Attach to squad
+	self:TryAttachSquad( true, false, 1000, 100, nil )
 end
 
