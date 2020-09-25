@@ -163,6 +163,9 @@ function tau_race:GetBuildingType(sBuildingName)
 		
 	elseif (sBuildingName == "tau_listening_post") then
 		return "ListeningPost", 0
+		
+	elseif (sBuildingName == "tau_turret") then
+		return "Turret", 50
 	end
 	return nil, 0
 end

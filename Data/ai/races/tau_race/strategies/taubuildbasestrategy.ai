@@ -122,7 +122,7 @@ function TauBuildBaseStrategy:GetBuildingName( sType )
 		return "tau_listening_post"
 		
 	elseif (sType == "Turret") then
-		return nil
+		return "tau_turret"
 		
 	elseif (sType == "Mine") then
 		return nil
@@ -138,6 +138,12 @@ function TauBuildBaseStrategy:GetAddonBuilding( sType )
 		
 	elseif (sType == "addon_tau_list_post_2") then
 		return "tau_listening_post"
+		
+	elseif (sType == "addon_tau_turret") then
+		return "tau_turret"
+
+	elseif (sType == "addon_tau_turret_probe") then
+		return "tau_turret"
 	end
 	return nil
 end
@@ -272,6 +278,11 @@ function TauBuildBaseStrategy:BuildFlexible()
 		-- Compute infantry research
 		if (iInfantrySquads >= 3) then
 			self:DynamicResearch("tau_improved_metallurgy", 3, 150, 150, 0, 0, nil, 0)
+		end
+		
+		-- Computer Probe Addon for emplacements if enemy has infiltrators
+		if (cpu_manager:EnemyHasUnitInfiltrators() or cpu_manager:EnemyHasBaseInfiltrators()) then
+			self:DynamicAddon("addon_tau_turret_probe", 5, 3, 10, 80, 0, 0, nil, nil, false)
 		end
 		
 		-- Compute secondary researches
